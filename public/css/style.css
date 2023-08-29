@@ -1,0 +1,157 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+
+:root {
+    --text-bg-color: #0D6EFD;
+    --main-bg-color: #D7F9D3;
+    --headtext-bg-color: #017737;
+    --bene-bg-color : #F7F7FE;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+.nav-cont{
+    background-color: rgb(198, 216, 233);
+}
+
+.container{
+    max-width: 1400px;
+}
+/* navbar section  */
+
+.navbar-nav li {
+    padding: 0px 15px;
+    font-size: 18px;
+    font-weight: 600;
+    color: black;
+}
+
+.navbar-nav li a:hover{
+    color: var(--text-bg-color);  
+}
+.navbar-nav li a:focus{
+    color: var(--text-bg-color);    
+}
+.active{
+    color: var(--text-bg-color);
+}
+
+/* nav section end  */
+
+/* main section  */
+.main-cont {
+    background-color: var(--main-bg-color);
+}
+
+.main-head h1 {
+    font-size: 50px;
+    font-weight: 700;
+    padding-top: 50px;
+    padding-bottom: 10px;
+    color: var(--headtext-bg-color);
+}
+
+.left-cont p{
+    font-size: 18px;
+    line-height: 30px;
+}
+
+ .para-style{
+    margin: 15px 0;
+    font-size: 20px;
+ }
+
+
+@media only screen and (max-width: 600px) {
+    .main-head h1 {
+        font-size: 25px;
+        font-weight: 700;
+        padding-top: 50px;
+        padding-bottom: 10px;
+        color: var(--headtext-bg-color);
+    }
+}
+
+.card-cont {
+    max-height: 245px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    gap: 25px;
+    width: 100%;
+    position: relative;
+    box-sizing: border-box;
+}
+
+.card-cont h5:hover{
+    text-decoration: underline;
+}
+.card-cont img:hover{
+    height: 73px;
+    text-decoration: underline;
+}
+
+/* benefit box css */
+.benefit-box {
+    background-color: var(--bene-bg-color);
+    margin-top: 20px;
+    margin-bottom: 20px;
+    /* padding: 40px 0px; */
+}
+.bene-list li {
+    margin-top: 20px;
+    list-style: none;
+    line-height: 20px;
+    font-size: 22px;
+}
+
+.accord-cont {
+    background-color: #f5f5f5;
+}
+
+.reg-section {
+    background-color: #D7F9D3;
+}
+
+.footer-cont {
+    background-color: var(--bene-bg-color);
+}
+
+.foot-link ul li {
+    list-style: none;
+    line-height: 40px;
+}
+
+.foot-link ul li a {
+    text-decoration: none;
+    color: black;
+}
+.foot-link ul li a:hover {
+    text-decoration: none;
+    color:  var(--text-bg-color);
+}
+
+.footer-search h5 {
+    color: #000000;
+    line-height: 50px;
+}
+
+.foot-btn{
+    background-color: var(--text-bg-color);
+    color: #ffff;
+}
+
+.foot-logo {
+    display: flex;
+    justify-content: start;
+    margin-top: 20px;
+    gap: 60px;
+}
+.copy-write{
+    margin: 30px 0px;
+    color: black;
+
+}
