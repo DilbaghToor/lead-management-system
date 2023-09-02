@@ -13,6 +13,7 @@ use Illuminate\Http\RedirectResponse;
 
 class AuthController extends Controller
 {
+
     public function index() : View {
         return view('login');
     }
@@ -26,18 +27,30 @@ class AuthController extends Controller
         return view('homepage');
     }
 
-    public function postLogin(Request $request) : RedirectResponse {
+    public function postLogin(Request $request) {
         $request->validate([
-            'email' => 'required',
+            'email' => 'required|email',
             'password' => 'required',
         ]);
 
         $credentials = $request->only('email', 'password');
-        if(Auth::attempt($credentials)) {
-            return redirect("dashboard")->withSuccess('You have Successfully loggedin');
+        $token = Auth::attempt($credentials);
+
+        if(!$token) {
+            return response()->json([
+                'message' => 'Unauthrized',
+            ]);
         }
 
-        return redirect("login")->withSuccess('Oppes! You have entered invalid crfedentials');
+        $user = Auth::user();
+
+        return response()->json([
+            'user' => $user,
+            'authrization' => [
+                'token' => $token,
+                'type' => 'bearer',
+            ]
+        ]);
 
     }
 
