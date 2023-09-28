@@ -24,7 +24,7 @@ class AuthController extends Controller
     }
 
     public function home() {
-        return view('homepage');
+        return view('home');
     }
 
     public function postLogin(Request $request) {
@@ -59,11 +59,13 @@ class AuthController extends Controller
         $request->validate([
             'name' => 'required',
             'email' => 'required|email|unique:users',
-            'password' => 'required|min:6',
+            'password' => 'required|',
             'role' => 'required|',
         ]);
+
            
         $data = $request->all();
+        dd($data);
         $check = $this->create($data);
          
         return redirect("dashboard")->withSuccess('Great! You have Successfully loggedin');

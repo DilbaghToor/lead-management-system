@@ -52,6 +52,8 @@
     <!-- Header Section End  -->
 
     @yield('homepage')
+    @yield('login')
+    @yield('register')
     
     <!-- regiestration button section end  -->
     <footer>
@@ -142,7 +144,7 @@
     
 
 
-
+   <script src="{{asset('/js/script.js')}}"></script>
     
 
 

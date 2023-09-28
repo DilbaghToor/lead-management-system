@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\viewController;
 use App\Http\Controllers\Auth\AuthController;
 
 /*
@@ -19,9 +20,10 @@ Route::get('/', function () {
 });
 
 Route::get('login', [AuthController::class, 'index'])->name('login');
-Route::post('post-login', [AuthController::class, 'postLogin'])->name('post-login'); 
+Route::post('post-login', [AuthController::class, 'postLogin'])->name('post-login');
 Route::get('registration', [AuthController::class, 'registration'])->name('registration');
-Route::post('post-registration', [AuthController::class, 'postRegistration'])->name('register.post'); 
+Route::get('checkbutton', [viewController::class, 'viewbtn'])->name('viewbtn');
+
 Route::get('dashboard', [AuthController::class, 'dashboard']); 
 Route::get('logout', [AuthController::class, 'logout'])->name('logout');
 Route::get('homepage', [AuthController::class, 'home'])->name('homepage');
