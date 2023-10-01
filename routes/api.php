@@ -3,6 +3,9 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ApiController;
+use App\Http\Controllers\Category;
+use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\GetControler;
 use App\Http\Controllers\viewController;
 
 /*
@@ -26,3 +29,7 @@ Route::apiResource('member', ApiController::class);
 
 Route::post('senddata', [viewController::class, 'store'])->name('std');
 Route::post('sendactive', [viewController::class, 'delstatus'])->name('std');
+
+Route::post('/catsend', [CategoryController::class, 'catget']);
+
+Route::get('getdata', [GetControler::class, 'index']);

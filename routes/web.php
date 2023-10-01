@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\viewController;
 use App\Http\Controllers\Auth\AuthController;
+use App\Http\Controllers\CategoryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,4 +28,9 @@ Route::get('checkbutton', [viewController::class, 'viewbtn'])->name('viewbtn');
 Route::get('dashboard', [AuthController::class, 'dashboard']); 
 Route::get('logout', [AuthController::class, 'logout'])->name('logout');
 Route::get('homepage', [AuthController::class, 'home'])->name('homepage');
+
+Route::get('category', [CategoryController::class, 'index']);
+
+
+Route::get('paginate', [CategoryController::class, 'pagent']);
 
